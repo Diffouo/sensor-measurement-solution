@@ -14,7 +14,7 @@ public class SensorUpdMessageParserUseCase implements MessageParserService {
 
     private static final String PROPS_SEPARATOR = ";";
     private static final String VALUE_SEPARATOR = "=";
-    private static final String LOG_PARSE_ERROR = "An error occurred while parsing the message {0}. \n" +
+    private static final String LOG_PARSE_ERROR = "An error occurred while parsing the message {0}. " +
           "Exception message = {1}";
 
     @Override
