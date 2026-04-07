@@ -1,0 +1,19 @@
+quarkus:
+  kafka:
+    devservices:
+      enabled: false
+
+mp:
+  messaging:
+    outgoing:
+      sensor-out:
+        connector: smallrye-kafka
+        topic: sensor_topic
+        value:
+          serializer: org.kmt.sensorcommon.serialization.SensorMessageSerializer
+
+sensor:
+  upd:
+    ports:
+      temperature: 3344
+      humidity: 3355
