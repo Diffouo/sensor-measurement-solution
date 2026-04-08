@@ -1,0 +1,8 @@
+mp:
+  messaging:
+    incoming:
+      sensors-in:
+        connector: smallrye-in-memory
+    outgoing:
+      alerts-out:
+        connector: smallrye-in-memory
