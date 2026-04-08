@@ -1,0 +1,27 @@
+quarkus:
+  console:
+    color: true
+  kafka:
+    devservices:
+      enabled: false
+
+mp:
+  messaging:
+    incoming:
+      sensors-in:
+        connector: smallrye-kafka
+        topic: sensor_topic
+        value:
+          deserializer: org.kmt.sensorcommon.serialization.SensorMessageDeserializer
+    outgoing:
+      alerts-out:
+        connector: smallrye-kafka
+        topic: sensor_alerts
+        value:
+          serializer: org.kmt.sensorcommon.serialization.SensorMessageSerializer
+
+
+sensor:
+  threshold:
+    temperature: 35 # in degree Celsius (°C)
+    humidity: 50    # in percentage (%)
