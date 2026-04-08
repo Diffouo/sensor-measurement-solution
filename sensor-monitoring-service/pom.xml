@@ -85,10 +85,20 @@
                 </configuration>
             </plugin>
             <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>properties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${surefire-plugin.version}</version>
                 <configuration>
-                    <argLine>@{argLine}</argLine>
+                    <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
                         <maven.home>${maven.home}</maven.home>
